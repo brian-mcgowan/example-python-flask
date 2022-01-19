@@ -121,7 +121,7 @@ be installed directly via `pip`.
 
 Install from local `.whl` file:
 ```shell
-pip install dist/example_flask-0.0.0-py3-none-any.whl
+pip install dist/example_flask-0.1.0-py3-none-any.whl
 ```
 
 Install from GitHub:
