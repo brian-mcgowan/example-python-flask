@@ -1,5 +1,5 @@
-# Example - Python
-A template repository for jump-starting development of Python packages
+# Example - Python/Flask
+A template repository for jump-starting development of Python/Flask web services
 
 ## Development
 
@@ -45,7 +45,7 @@ Code coverage is a metric for determining the maintainability of a project.
 
 Run unit tests with code coverage:
 ```shell
-pytest --cov=example_python
+pytest --cov=example_flask
 ```
 
 #### Generating Detailed Coverage Report
@@ -54,7 +54,36 @@ lines are not being run during testing.
 
 Run unit tests, check for code coverage, generate a browsable coverage report:
 ```shell
-pytest --cov=example_python --cov-report=html
+pytest --cov=example_flask --cov-report=html
+```
+
+### Run the Service
+
+#### Using Flask Development Server
+Change in the `src/` directory:
+```shell
+cd src/
+```
+
+Set the FLASK_APP and LOG_LEVEL environment variables then start the service:
+```shell
+FLASK_APP=example_flask.app \
+LOG_LEVEL=INFO \
+flask run
+```
+
+> The Flask development server should only be used in a development environment.
+
+#### Using Green Unicorn
+Change into the `src/` directory:
+```shell
+cd src/
+```
+
+Set the LOG_LEVEL environment variable then start the service:
+```shell
+LOG_LEVEL=INFO \
+gunicorn -b 0.0.0.0:5000 -w 2 "example_flask.app:create_app()"
 ```
 
 ### Apply Code Formatting
@@ -92,19 +121,19 @@ be installed directly via `pip`.
 
 Install from local `.whl` file:
 ```shell
-pip install dist/example_python-0.1.0-py3-none-any.whl
+pip install dist/example_flask-0.0.0-py3-none-any.whl
 ```
 
 Install from GitHub:
 ```shell
 # Install the package as it exists on the default branch
-pip install git+ssh://github.com/brian-mcgowan/example-python.git
+pip install git+ssh://github.com/brian-mcgowan/example-python-flask.git
 
 # Install the package as it exists on a specific branch
-pip install git+ssh://github.com/brian-mcgowan/example-python.git@develop
+pip install git+ssh://github.com/brian-mcgowan/example-python-flask.git@develop
 
 # Install the package as it exists at a specific commit
-pip install git+ssh://github.com/brian-mcgowan/example-python.git@<commit-hash>
+pip install git+ssh://github.com/brian-mcgowan/example-python-flask.git@<commit-hash>
 ```
 
 [//]: # (TODO: Write "Install from PyPI" section.)
