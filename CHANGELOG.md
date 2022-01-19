@@ -7,5 +7,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Added
 - Python project template files.
+- Flask application stub.
 
 [Unreleased]: https://github.com/brian-mcgowan/example-python-flask/compare/main...develop
